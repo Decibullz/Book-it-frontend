@@ -5,13 +5,29 @@ import DashboardPage from './pages/DashboardPage';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
-import { Switch, Route } from 'react-router-dom'
-function App() {
-  
-  return (
+import { Switch, Route, withRouter } from 'react-router-dom'
+import { getUser, logout } from './services/userService';
+import { useState } from 'react';
 
+
+function App(props) {
+  const [ userState, setUserState ] = useState({ user: getUser() });
+
+  function handleSignupOrLogin(){
+    setUserState({ user:getUser()})
+    props.history.push('./dashboard')
+  }
+
+  function handleLogout(){
+    logout()
+    setUserState({user:null})
+    props.history.push('/')
+  }
+
+  return (
     <div className="App">
-    <Header/>
+    <Header user={userState.user}
+     handleLogout={handleLogout}/>
       <Switch>
         <Route exact path ='/' render={props=>
           <HomePage/>
@@ -20,10 +36,10 @@ function App() {
           <DashboardPage/>
         }/>
         <Route exact path ='/login' render={props=>
-          <LoginPage/>
+          <LoginPage handleSignupOrLogin={handleSignupOrLogin}/>
         }/>
         <Route exact path ='/signup' render={props=>
-          <SignupPage/>
+          <SignupPage handleSignupOrLogin={handleSignupOrLogin}/>
         }/>
       </Switch>
     <Footer/>
@@ -32,4 +48,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);

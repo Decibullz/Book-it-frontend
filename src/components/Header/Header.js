@@ -10,10 +10,12 @@ export default function Header(props){
             </Link>
             <nav>
                 <ul className="NavLinks">
-                    <li><Link to = '/logout'>Logout</Link></li>
-                    <li><Link to= '/dashboard'>Dashboard</Link></li> 
-                    <li><Link to= '/signup'>Signup</Link></li>
-                    <li><Link to ='/login'>Login</Link></li>                        
+                    
+            <li>{props.user && <Link to='' onClick={props.handleLogout}>Log Out</Link>}</li>
+            <li>{props.user && <Link to= '/dashboard'>Dashboard</Link>}</li>                   
+            <li>{!props.user && <Link to= '/signup'>Signup</Link>}</li>
+            <li>{!props.user && <Link to ='/login'>Login</Link>}</li>                        
+                 
                 </ul>
             </nav>
         </header>
