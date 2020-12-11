@@ -1,6 +1,6 @@
 import { setToken, getUserFromToken, removeToken } from './tokenService';
 
-const BASE_URL = 'http://localhost:3001/api/users';
+const BASE_URL = 'https://protected-harbor-89646.herokuapp.com/api/users';
 
 
 
