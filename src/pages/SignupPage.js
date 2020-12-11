@@ -60,9 +60,11 @@ function formValid(){
             <div className="col-sm-12 text-center">
               <input disabled={!formValid()} type="submit" className="btn btn-default" value="Sign Up" />
               &nbsp;&nbsp;
-              <Link to='/login'>Sign-In</Link>
               &nbsp;&nbsp;
               <Link to='/'>Cancel</Link>
+              <br/>
+              <p></p>
+              <p>Already a User?</p><p><Link to='/login'>Sign-In</Link> </p>
             </div>
           </div>
         </form>
