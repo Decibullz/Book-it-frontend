@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import SearchedBook from '../components/SearchedBook/SearchedBook'
 import { getBooks } from '../services/bookService'
 import './Pages.css'
@@ -10,16 +10,6 @@ export default function SearchPage(props){
     const [ bookData, setBookData ] = useState({
         items:[] 
       })
-
-    //   async function getBookData(){
-    //     const data = await getBooks()
-    //     setBookData(data)
-    //     console.log("1 google data " ,data, "bookData",bookData);
-    //   }
-
-    //   useEffect(() => {
-    //     getBookData();
-    //   },[])
 
     function handleChange(evt){
         setFormState(prevState => ({
