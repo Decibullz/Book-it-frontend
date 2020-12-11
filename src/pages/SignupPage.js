@@ -35,6 +35,8 @@ function formValid(){
 
     return(
         <main className="Page">
+          <div className="transbox">
+
             <h1>
             Signup
             </h1>
@@ -58,10 +60,13 @@ function formValid(){
             <div className="col-sm-12 text-center">
               <input disabled={!formValid()} type="submit" className="btn btn-default" value="Sign Up" />
               &nbsp;&nbsp;
+              <Link to='/login'>Sign-In</Link>
+              &nbsp;&nbsp;
               <Link to='/'>Cancel</Link>
             </div>
           </div>
         </form>
+          </div>
             </main>
     )
 }

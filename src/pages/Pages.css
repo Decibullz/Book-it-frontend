@@ -4,7 +4,36 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url("../imgs/library.jpg");
   }
   .Page > h1 {
     margin-bottom: 50px;
+    justify-content: center;
   }
+h1{
+  justify-content: center;
+}
+
+
+.collection{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px;
+}
+
+.transbox {
+  margin: 30px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.8;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+}
+
+.searchedbook{
+    margin: 15px;  
+}
