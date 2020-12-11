@@ -1,4 +1,6 @@
 .Footer{
+    background-color: rgb(88,54,28);
+    color: antiquewhite;
     display: flex;
     justify-content: center;
     align-items: center;
