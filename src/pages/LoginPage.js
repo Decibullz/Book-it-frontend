@@ -38,7 +38,7 @@ export default function LoginPage(props){
         <main className="Page">
             <div className="transbox">
             <h1>
-            Login Page
+            Login
             </h1>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
